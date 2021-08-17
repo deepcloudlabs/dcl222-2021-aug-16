@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.2">
+  <help_text>// Java Design Patterns - D72140GC
+// Lesson 1 - Reviewing Object-oriented principles in Java
+// Author: Michael Ernest
+// Diagram: UML game example
+fontsize=18</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>100</x>
+      <y>120</y>
+      <w>270</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Applet&gt;&gt;
+Game
+--
+-starMap: Point[]
+_#gameState: int[]_
+--
+#populateMap
++addPlayer(pl: Player): boolean
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>480</x>
+      <y>320</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+-location: Point
+_#lives: int_
+_#health: int_
+--
++fire(): boolean
++move(): Point
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>510</x>
+      <y>130</y>
+      <w>190</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Alien
+--
+-location: Point
+-damage: int
+--
+#explode(): void
+#shielded(): boolean
++getDamage()
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>190</x>
+      <y>250</y>
+      <w>310</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m2=1..2
+-players
+</panel_attributes>
+    <additional_attributes>70;30;70;130;290;130</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>340</x>
+      <y>140</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+-invaders
+m2=0..20</panel_attributes>
+    <additional_attributes>30;50;170;50</additional_attributes>
+  </element>
+</diagram>

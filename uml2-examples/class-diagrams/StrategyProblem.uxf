@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.2">
+  <help_text>// Java Design Patterns - D72140GC
+// Lesson 2 - Reviewing Gang of Four Patterns
+// Author: Michael Ernest
+// Diagram: Strategy Problem diagram
+fontsize=18</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>160</x>
+      <y>200</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>CatalogSearchEngine
+--
+--
++search(): ArrayList
+bg=#2288FF</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>450</x>
+      <y>210</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>/* perform search;
+    perform merge sort;
+*/
+return list;
+bg=#aabbcc</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>330</x>
+      <y>210</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>30;30;120;30</additional_attributes>
+  </element>
+</diagram>

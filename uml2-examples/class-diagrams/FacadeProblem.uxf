@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.2">
+  <help_text>// Java Design Patterns - D72140GC
+// Lesson 2 - Reviewing Gang of Four Patterns
+// Author: Michael Ernest
+// Diagram: Facade Problem diagram
+fontsize=18</help_text>
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>279</x>
+      <y>135</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Client
+--
+--
++makeReservation()
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>585</x>
+      <y>135</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Room
+--
+--
++setAvailable()
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>585</x>
+      <y>63</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>HotelSearchService
+--
+--
++findRooms()
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>585</x>
+      <y>351</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Guest
+--
+--
++updateProfile()
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>585</x>
+      <y>225</y>
+      <w>162</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Reservation
+--
+--
++cancel()
++create()
++update()
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>720</x>
+      <y>72</y>
+      <w>89</w>
+      <h>107</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes>
+    <additional_attributes>27;90;72;90;72;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>720</x>
+      <y>63</y>
+      <w>116</w>
+      <h>215</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes>
+    <additional_attributes>27;198;99;198;99;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>414</x>
+      <y>144</y>
+      <w>188</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>171;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>414</x>
+      <y>72</y>
+      <w>188</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>171;27;72;27;72;99;27;99</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>414</x>
+      <y>144</y>
+      <w>188</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>171;126;72;126;72;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>9</x>
+      <y>243</y>
+      <w>459</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>HotelSearchService search = new HotelSearchService();
+Room[] rooms = search.findRooms();
+Room theRoom = /* selected room */;
+Guest theGuest = new Guest();
+/* retrieve guest information */;
+theRoom.setAvailable(false);
+Reservation reserved = new Reservation(theRoom, theGuest);
+bg=#aabbcc
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>306</x>
+      <y>162</y>
+      <w>44</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>27;27;27;81</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>585</x>
+      <y>441</y>
+      <w>198</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>Client doesn't know how
+to apply this method
+bg=#aabbcc
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>657</x>
+      <y>378</y>
+      <w>44</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>27;27;27;63</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>414</x>
+      <y>144</y>
+      <w>188</w>
+      <h>251</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>171;234;72;234;72;27;27;27</additional_attributes>
+  </element>
+</diagram>

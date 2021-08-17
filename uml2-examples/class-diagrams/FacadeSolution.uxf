@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.2">
+  <help_text>// Java Design Patterns - D72140GC
+// Lesson 2 - Reviewing Gang of Four Patterns
+// Author: Michael Ernest
+// Diagram: Facade Solution diagram
+fontsize=18</help_text>
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>45</x>
+      <y>225</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Client
+--
+--
++makeReservation()
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>549</x>
+      <y>180</y>
+      <w>171</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Room
+--
+--
++setAvailable()
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>549</x>
+      <y>99</y>
+      <w>171</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>HotelSearchService
+--
+--
++findRooms()
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>549</x>
+      <y>333</y>
+      <w>171</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Guest
+--
+--
++updateProfile()
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>549</x>
+      <y>243</y>
+      <w>171</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Reservation
+--
+--
++cancel()
++create()
++update()
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>693</x>
+      <y>108</y>
+      <w>71</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes>
+    <additional_attributes>27;99;54;99;54;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>693</x>
+      <y>99</y>
+      <w>107</w>
+      <h>188</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes>
+    <additional_attributes>27;171;90;171;90;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>252</x>
+      <y>162</y>
+      <w>189</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Facade&gt;&gt;
+ReservationService
+--
+--
++cancel()
++confirm()
++modify()
++reserveRoom()
+fg=black
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>414</x>
+      <y>99</y>
+      <w>152</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>135;27;81;27;81;99;54;99;27;99</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>414</x>
+      <y>198</y>
+      <w>152</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>135;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>414</x>
+      <y>234</y>
+      <w>152</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>135;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>414</x>
+      <y>261</y>
+      <w>152</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>135;99;81;99;81;27;45;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>180</x>
+      <y>225</y>
+      <w>89</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>72;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>45</x>
+      <y>333</y>
+      <w>414</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>Facade methods describe service actions. They may
+adapt or map directly to one or more service methods.
+bg=#aabbcc
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>360</x>
+      <y>270</y>
+      <w>44</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>27;27;27;63</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>468</x>
+      <y>450</y>
+      <w>270</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>ReservationService understands
+how to apply this method
+bg=#aabbcc
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>603</x>
+      <y>360</y>
+      <w>44</w>
+      <h>107</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>27;27;27;90</additional_attributes>
+  </element>
+</diagram>

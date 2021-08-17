@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.2">
+  <help_text>// Java Design Patterns - D72140GC
+// Lesson 2 - Reviewing Gang of Four Patterns
+// Author: Michael Ernest
+// Diagram: Observer Solution diagram
+fontsize=18</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>330</x>
+      <y>160</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+r1=-listeners
+m1=0..*</panel_attributes>
+    <additional_attributes>180;30;180;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>30</x>
+      <y>330</y>
+      <w>300</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>create Fault object and message;
+notify() listeners
+bg=#aabbcc</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>30</x>
+      <y>130</y>
+      <w>330</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>FaultMessageGenerator
+--
+--
++addFaultListener(f : FaultListener)
++removeFaultListener(f : FaultListener)
+#notify(f : Fault, msg : String)
+-faulted()
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>110</x>
+      <y>230</y>
+      <w>50</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>30;30;30;100</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>400</x>
+      <y>120</y>
+      <w>300</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>FaultListener
+--
+--
+faultEvent(fault : Fault, msg : String) 
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>660</x>
+      <y>140</y>
+      <w>90</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>40;30;70;30;70;360;30;360</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>380</x>
+      <y>270</y>
+      <w>310</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>FaultLogger
+--
+--
++faultEvent(fault : Fault, msg : String) 
+bg=#22288FF</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>380</x>
+      <y>360</y>
+      <w>310</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>FaultMailer
+--
+--
++faultEvent(fault : Fault, msg : String) 
+bg=#2288FF</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>380</x>
+      <y>460</y>
+      <w>310</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>FaultPager
+--
+--
++faultEvent(fault : Fault, msg : String) 
+bg=#2288FF</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>660</x>
+      <y>350</y>
+      <w>90</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>30;30;70;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>660</x>
+      <y>260</y>
+      <w>90</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>30;30;70;30</additional_attributes>
+  </element>
+</diagram>

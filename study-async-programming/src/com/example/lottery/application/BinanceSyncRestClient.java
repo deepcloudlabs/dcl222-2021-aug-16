@@ -11,8 +11,10 @@ public class BinanceSyncRestClient {
 			"https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT";
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-		var client = HttpClient.newHttpClient();
-		var request = HttpRequest.newBuilder()
+		// Networking API (Java 11)-> Flow API, Domain-Specific Language, Method Chaining -> jQuery
+		// DateTime API (Java 8)
+		var client = HttpClient.newHttpClient(); // Factory Method Pattern
+		var request = HttpRequest.newBuilder() // Builder Pattern
 				                 .uri(URI.create(BINANCE_REST_API_URL))
 				                 .header("Accept","application/json")
 				                 .build();

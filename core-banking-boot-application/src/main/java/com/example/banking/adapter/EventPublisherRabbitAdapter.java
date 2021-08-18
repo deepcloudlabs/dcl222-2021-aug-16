@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 // Strategy: RabbitMQ vs Kafka?
 @Service
 @ConditionalOnProperty(name = "messagingStrategy", havingValue = "rabbit")
+// Singleton!
 public class EventPublisherRabbitAdapter implements EventPublisher {
 	private RabbitTemplate rabbitTemplate;
 	private ObjectMapper objectMapper;

@@ -1,0 +1,29 @@
+package com.example.banking.configuration;
+
+import org.modelmapper.Converter;
+import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.example.banking.entity.Account;
+import com.example.banking.entity.AccountDocument;
+import com.example.banking.entity.Iban;
+
+@Configuration
+public class ModelMapperConfig {
+	private static final Converter<AccountDocument,Account> accountDocument2AccountConverter = context -> {
+		var document = context.getSource();
+		var account = new Account.Builder(Iban.of(document.getIban()))
+				                  .balance(document.getBalance(), document.getCurrency())
+				                  .status(document.getStatus())
+				                  .build();
+		return account;
+	};
+	
+	@Bean
+	public ModelMapper mapper() {
+		var modelMapper = new ModelMapper();
+		modelMapper.addConverter(accountDocument2AccountConverter, AccountDocument.class, Account.class);
+		return modelMapper;
+	}
+}

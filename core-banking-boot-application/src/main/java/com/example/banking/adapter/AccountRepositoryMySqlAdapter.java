@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import com.example.banking.entity.Account;
 import com.example.banking.entity.Iban;
-import com.example.banking.repository.AccountDocumentRepository;
 import com.example.banking.repository.AccountEntityRepository;
 import com.example.banking.repository.AccountRepository;
 

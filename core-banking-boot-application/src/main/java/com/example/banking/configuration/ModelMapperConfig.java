@@ -20,6 +20,17 @@ public class ModelMapperConfig {
 				                  .build();
 		return account;
 	};
+	
+	private static final Converter<Account,AccountDocument> account2AccountDocumentConverter = context -> {
+		var account = context.getSource();
+		var accountDocument = new AccountDocument();
+		accountDocument.setIban(account.getIban().getValue());
+		accountDocument.setBalance(account.getBalance().getValue());
+		accountDocument.setCurrency(account.getBalance().getCurrency());
+		accountDocument.setStatus(account.getStatus());
+		return accountDocument;
+	};
+	
 	private static final Converter<AccountEntity,Account> accountEntity2AccountConverter = context -> {
 		var accEntity = context.getSource();
 		var account = new Account.Builder(Iban.of(accEntity.getIban()))
@@ -33,6 +44,7 @@ public class ModelMapperConfig {
 	public ModelMapper mapper() {
 		var modelMapper = new ModelMapper();
 		modelMapper.addConverter(accountDocument2AccountConverter, AccountDocument.class, Account.class);
+		modelMapper.addConverter(account2AccountDocumentConverter, Account.class, AccountDocument.class);
 		modelMapper.addConverter(accountEntity2AccountConverter, AccountEntity.class, Account.class);
 		return modelMapper;
 	}

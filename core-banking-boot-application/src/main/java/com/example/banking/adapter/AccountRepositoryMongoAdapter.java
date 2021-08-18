@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
 import com.example.banking.entity.Account;
+import com.example.banking.entity.AccountDocument;
 import com.example.banking.entity.Iban;
 import com.example.banking.repository.AccountDocumentRepository;
 import com.example.banking.repository.AccountRepository;
@@ -36,7 +37,7 @@ public class AccountRepositoryMongoAdapter implements AccountRepository {
 
 	@Override
 	public void update(Account account) {
-		//TODO
+		repo.save(modelMapper.map(account, AccountDocument.class));
 	}
 
 }
